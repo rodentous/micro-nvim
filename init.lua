@@ -63,8 +63,8 @@ vim.keymap.set('i', '<C-v>', "<C-O>pi", { desc = "Paste", noremap = true })
 vim.keymap.set('i', '<C-a>', "<C-O>G$vgg0i", { desc = "Select all", noremap = true })
 
 -- Doesn't work. idk why
-vim.keymap.set('i', '<C-_>', "<C-O>gcc", { desc = "comment", noremap = true })
-vim.keymap.set('v', '<C-_>', "<C-O>gc", { desc = "comment", noremap = true })
+vim.keymap.set('i', '<C-_>', "<C-O>gcc", { desc = "Comment", noremap = true })
+vim.keymap.set('v', '<C-_>', "<C-O>gc", { desc = "Comment", noremap = true })
 
 vim.keymap.set('i', '\b', "<C-O>db<C-O>x", { desc = "Delete word", noremap = true })
 vim.keymap.set('i', '<C-Del>', "<C-O>dw", { desc = "Delete word to the right", noremap = true })
@@ -74,14 +74,14 @@ vim.keymap.set('n', '<BS>', "Xi", { desc = "Backspace", noremap = true })
 vim.keymap.set('v', '<BS>', "Xi", { desc = "Backspace", noremap = true })
 vim.keymap.set('n', '<Esc>', "i", { desc = "Insert mode", noremap = true })
 
-vim.keymap.set('i', '<C-q>', "<cmd>qa!<CR>", { desc = "Quit entierly", noremap = true })
-vim.keymap.set('i', '<C-w>', "<cmd>q!<CR>", { desc = "Close current file", noremap = true })
+vim.keymap.set({'i', 'n'}, '<C-q>', "<cmd>qa!<CR>", { desc = "Quit entierly", noremap = true })
+vim.keymap.set({'i', 'n'}, '<C-w>', "<cmd>q!<CR>", { desc = "Close current file", noremap = true })
 
 vim.keymap.set('i', '<A-.>', "<cmd>tabnext<CR>", { desc = "Next tab", noremap = true })
 vim.keymap.set('i', '<A-,>', "<cmd>tabprevious<CR>", { desc = "Previous tab", noremap = true })
 
 vim.keymap.set('i', '<C-b>', "<cmd>tab terminal<CR>", { desc = "Terminal", noremap = true })
-vim.keymap.set('i', '<C-e>', "<C-O>:", { desc = "Terminal", noremap = true })
+vim.keymap.set('i', '<C-e>', "<C-O>:", { desc = "Internal command prompt", noremap = true })
 
 
 vim.cmd("inoremap <C-Z> <C-O>u")
@@ -90,24 +90,5 @@ vim.cmd("inoremap <C-Y> <C-O><C-R>")
 vim.opt.keymodel = 'startsel,stopsel'
 
 
--- vim.cmd("nnoremap <S-Up> <Esc>v<Up>")
--- vim.cmd("nnoremap <S-Down> <Esc>v<Down>")
--- vim.cmd("nnoremap <S-Left> <Esc>v<Left>")
--- vim.cmd("nnoremap <S-Right> <Esc>v<Right>")
---
--- vim.cmd("vnoremap <S-Up> <Esc>v<Up>")
--- vim.cmd("vnoremap <S-Down> <Esc>v<Down>")
--- vim.cmd("vnoremap <S-Left> <Esc>v<Left>")
--- vim.cmd("vnoremap <S-Right> <Esc>v<Right>")
---
--- vim.cmd("inoremap <S-Up> <Esc>v<Up>")
--- vim.cmd("inoremap <S-Down> <Esc>v<Down>")
--- vim.cmd("inoremap <S-Left> <Esc>v<Left>")
--- vim.cmd("inoremap <S-Right> <Esc>v<Right>")
-
--- vim.keymap.set('i', '<C-z>', "<C-O><cmd>undo<CR>", { desc = "Undo", noremap = true })
--- vim.keymap.set('i', '<C-Z>', "<C-O><cmd>redo<CR>", { desc = "Redo", noremap = true })
--- vim.keymap.set('i', '<C-y>', "<C-O><cmd>redo<CR>", { desc = "Redo", noremap = true })
---
 vim.keymap.set('i', '<C-d>', "<cmd>co.<CR>", { desc = "Duplicate line down", noremap = true })
 
