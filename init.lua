@@ -4,7 +4,7 @@ require("config.lazy")
 vim.opt.autochdir = true
 
 -- use catppuccin colors
-vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd.colorscheme "catppuccin-mocha"
 vim.cmd.cnoreabbrev "qq qa!"
 
 -- <Tab> = 4 spaces
@@ -56,10 +56,19 @@ vim.keymap.set('n', '<A-,>', "<cmd>tabprevious<CR>", { desc = "Previous tab" })
 vim.keymap.set('i', '<C-s>', "<cmd>w<CR>", { desc = "Save file", noremap = true })
 vim.keymap.set('i', '<C-k>', "<cmd>.,.d_<CR>", { desc = "Remove line", noremap = true })
 vim.keymap.set('i', '<C-x>', "<C-O>dd", { desc = "Cut line", noremap = true })
-vim.keymap.set('v', '<C-x>', "x", { desc = "Cut", noremap = true })
+vim.keymap.set('v', '<C-x>', "xi", { desc = "Cut", noremap = true })
+vim.keymap.set('v', '<C-c>', "yi", { desc = "Copy", noremap = true })
 vim.keymap.set('i', '<C-c>', "<C-O>yy", { desc = "Copy", noremap = true })
 vim.keymap.set('i', '<C-v>', "<C-O>pi", { desc = "Paste", noremap = true })
-vim.keymap.set('i', '<C-a>', "<Esc>G$vgg0i", { desc = "Select all", noremap = true })
+vim.keymap.set('i', '<C-a>', "<C-O>G$vgg0i", { desc = "Select all", noremap = true })
+
+-- Doesn't work. idk why
+vim.keymap.set('i', '<C-_>', "<C-O>gcc", { desc = "comment", noremap = true })
+vim.keymap.set('v', '<C-_>', "<C-O>gc", { desc = "comment", noremap = true })
+
+vim.keymap.set('i', '\b', "<C-O>db<C-O>x", { desc = "Delete word", noremap = true })
+vim.keymap.set('i', '<C-Del>', "<C-O>dw", { desc = "Delete word to the right", noremap = true })
+
 
 vim.keymap.set('n', '<BS>', "Xi", { desc = "Backspace", noremap = true })
 vim.keymap.set('v', '<BS>', "Xi", { desc = "Backspace", noremap = true })
