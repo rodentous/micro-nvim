@@ -43,16 +43,20 @@ require'lspconfig'.pylsp.setup{
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 --- MICRO CONFIGURATION ---
+
 -- Auto insert
 vim.cmd("startinsert")
+
+-- no normal mode
+vim.keymap.set('i', '<Esc>', '<nop>')
 
 vim.keymap.set('n', '<A-.>', "<cmd>tabnext<CR>", { desc = "Next tab" })
 vim.keymap.set('n', '<A-,>', "<cmd>tabprevious<CR>", { desc = "Previous tab" })
 
-
 vim.keymap.set('i', '<C-s>', "<cmd>w<CR>", { desc = "Save file", noremap = true })
 vim.keymap.set('i', '<C-k>', "<cmd>.,.d_<CR>", { desc = "Remove line", noremap = true })
 vim.keymap.set('i', '<C-x>', "<C-O>dd", { desc = "Cut line", noremap = true })
+vim.keymap.set('v', '<C-x>', "x", { desc = "Cut", noremap = true })
 vim.keymap.set('i', '<C-c>', "<C-O>yy", { desc = "Copy", noremap = true })
 vim.keymap.set('i', '<C-v>', "<C-O>pi", { desc = "Paste", noremap = true })
 vim.keymap.set('i', '<C-a>', "<Esc>G$vgg0i", { desc = "Select all", noremap = true })
@@ -61,16 +65,14 @@ vim.keymap.set('n', '<BS>', "Xi", { desc = "Backspace", noremap = true })
 vim.keymap.set('v', '<BS>', "Xi", { desc = "Backspace", noremap = true })
 vim.keymap.set('n', '<Esc>', "i", { desc = "Insert mode", noremap = true })
 
--- no normal mode
-vim.keymap.set('i', '<Esc>', '<nop>')
-
-vim.keymap.set('i', '<C-q>', "<cmd>qa<CR>", { desc = "Quit entierly", noremap = true })
-vim.keymap.set('i', '<C-w>', "<cmd>q<CR>", { desc = "Close current file", noremap = true })
+vim.keymap.set('i', '<C-q>', "<cmd>qa!<CR>", { desc = "Quit entierly", noremap = true })
+vim.keymap.set('i', '<C-w>', "<cmd>q!<CR>", { desc = "Close current file", noremap = true })
 
 vim.keymap.set('i', '<A-.>', "<cmd>tabnext<CR>", { desc = "Next tab", noremap = true })
 vim.keymap.set('i', '<A-,>', "<cmd>tabprevious<CR>", { desc = "Previous tab", noremap = true })
 
-vim.keymap.set('i', '<C-b>', "<cmd>terminal<CR>", { desc = "Terminal", noremap = true })
+vim.keymap.set('i', '<C-b>', "<cmd>tab terminal<CR>", { desc = "Terminal", noremap = true })
+vim.keymap.set('i', '<C-e>', "<C-O>:", { desc = "Terminal", noremap = true })
 
 
 vim.cmd("inoremap <C-Z> <C-O>u")
