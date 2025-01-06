@@ -66,8 +66,8 @@ vim.keymap.set('i', '<C-a>', "<C-O>G$vgg0i", { desc = "Select all", noremap = tr
 vim.keymap.set('i', '<C-_>', "<C-O>gcc", { desc = "Comment", noremap = true })
 vim.keymap.set('v', '<C-_>', "<C-O>gc", { desc = "Comment", noremap = true })
 
-vim.keymap.set('i', '\b', "<C-O>db<C-O>x", { desc = "Delete word", noremap = true })
-vim.keymap.set('i', '<C-Del>', "<C-O>dw", { desc = "Delete word to the right", noremap = true })
+vim.keymap.set('i', '\b', '<C-O>"_db<C-O>"_x', { desc = "Delete word", noremap = true })
+vim.keymap.set('i', '<C-Del>', '<C-O>"_dw', { desc = "Delete word to the right", noremap = true })
 
 
 vim.keymap.set('n', '<BS>', "Xi", { desc = "Backspace", noremap = true })
