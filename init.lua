@@ -40,7 +40,7 @@ require'lspconfig'.pylsp.setup{
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set({'i', 'n'}, '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set({'i', 'n'}, '<Esc>', '<cmd>nohlsearch<CR>', { noremap = true } )
 
 --- MICRO CONFIGURATION ---
 
@@ -62,6 +62,7 @@ vim.keymap.set('i', '<C-c>', "<C-O>yy", { desc = "Copy", noremap = true })
 vim.keymap.set('i', '<C-v>', "<C-O>pi", { desc = "Paste", noremap = true })
 vim.keymap.set('i', '<C-a>', "<C-O>G<C-O>$<C-O>vgg0i", { desc = "Select all", noremap = true })
 vim.keymap.set('i', '<C-f>', "<C-O>/", { desc = "Find", noremap = true })
+vim.keymap.set('i', '<C-o>', "<C-O>:e ", { desc = "Open", noremap = true })
 
 
 vim.keymap.set('i', '<C-S-down>', "<cmd>m +1<CR>", { desc = "Move line down", noremap = true })
@@ -73,11 +74,11 @@ vim.keymap.set('i', '<C-S-Up>', "<cmd>m -2<CR>", { desc = "Move line up", norema
 vim.keymap.set('i', '<C-_>', "<C-O>gcc", { desc = "Comment", remap = true })
 vim.keymap.set('v', '<C-_>', "gc", { desc = "Comment", remap = true })
 
-vim.keymap.set('i', '\b', '<C-O>"_db<C-O>"_x', { desc = "Delete word", noremap = true })
+vim.keymap.set('i', '\b', '<C-O>"_db', { desc = "Delete word", noremap = true })
 vim.keymap.set('i', '<C-Del>', '<C-O>"_dw', { desc = "Delete word to the right", noremap = true })
 
-vim.keymap.set('n', '<BS>', "Xi", { desc = "Backspace", noremap = true })
-vim.keymap.set('v', '<BS>', "Xi", { desc = "Backspace", noremap = true })
+vim.keymap.set('n', '<BS>', '"_X', { desc = "Backspace", noremap = true })
+vim.keymap.set('v', '<BS>', '"_x', { desc = "Backspace", noremap = true })
 vim.keymap.set('n', '<Esc>', "i", { desc = "Insert mode", noremap = true })
 
 vim.keymap.set({'i', 'n'}, '<C-q>', "<cmd>qa!<CR>", { desc = "Quit entierly", noremap = true })
