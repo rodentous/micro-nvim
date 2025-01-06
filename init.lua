@@ -40,7 +40,7 @@ require'lspconfig'.pylsp.setup{
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set({'i', 'n'}, '<Esc>', '<cmd>nohlsearch<CR>', { noremap = true } )
+vim.keymap.set({'i', 'n'}, '<Esc>', '<cmd>nohlsearch<CR>', { noremap = true })
 
 --- MICRO CONFIGURATION ---
 
@@ -62,13 +62,15 @@ vim.keymap.set('i', '<C-c>', "<C-O>yy", { desc = "Copy", noremap = true })
 vim.keymap.set('i', '<C-v>', "<C-O>pi", { desc = "Paste", noremap = true })
 vim.keymap.set('i', '<C-a>', "<C-O>G<C-O>$<C-O>vgg0i", { desc = "Select all", noremap = true })
 vim.keymap.set('i', '<C-f>', "<C-O>/", { desc = "Find", noremap = true })
-vim.keymap.set('i', '<C-o>', "<C-O>:e ", { desc = "Open", noremap = true })
+-- vim.keymap.set('i', '<C-o>', "<C-O>:e ", { desc = "Open", noremap = true })
 
 
-vim.keymap.set('i', '<C-S-down>', "<cmd>m +1<CR>", { desc = "Move line down", noremap = true })
-vim.keymap.set('i', '<A-Down>', "<cmd>m +1<CR>", { desc = "Move line down", noremap = true })
-vim.keymap.set('i', '<A-Up>', "<cmd>m -2<CR>", { desc = "Move line up", noremap = true })
 vim.keymap.set('i', '<C-S-Up>', "<cmd>m -2<CR>", { desc = "Move line up", noremap = true })
+vim.keymap.set('i', '<C-S-down>', "<cmd>m +1<CR>", { desc = "Move line down", noremap = true })
+vim.keymap.set('i', '<A-Up>', "<cmd>m -2<CR>", { desc = "Move line up", noremap = true })
+vim.keymap.set('i', '<A-Down>', "<cmd>m +1<CR>", { desc = "Move line down", noremap = true })
+vim.keymap.set('i', '<A-Left>', "<C-O>0", { desc = "Move to the beginning of the current line", noremap = true })
+vim.keymap.set('i', '<A-Right>', "<C-O>$", { desc = "Move to the end of the current line", noremap = true })
 
 
 vim.keymap.set('i', '<C-_>', "<C-O>gcc", { desc = "Comment", remap = true })
