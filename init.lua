@@ -59,8 +59,8 @@ vim.keymap.set('i', '<C-v>', "<C-O>p", { desc = "Paste", noremap = true })
 vim.keymap.set('i', '<C-a>', "<C-O>G<C-O>$<C-O>vgg0i", { desc = "Select all", noremap = true })
 
 vim.keymap.set('i', '<C-f>', "<C-O>/", { desc = "Find", noremap = true })
-vim.keymap.set('i', '<C-o>', "<C-O>:tabedit ", { desc = "Open", noremap = false })
-vim.keymap.set('i', '<C-A-O>', "<C-O>", { desc = "Temporarily use normal mode", noremap = false })
+vim.keymap.set('i', '<C-o>', "<C-O>:tabedit ", { desc = "Open", noremap = true })
+vim.keymap.set('i', '<C-A-O>', "<C-O>", { desc = "Temporarily use normal mode", noremap = true })
 
 
 vim.keymap.set('i', '<C-S-Up>', "<cmd>m -2<CR>", { desc = "Move line up", noremap = true })
@@ -73,6 +73,9 @@ vim.keymap.set('i', '<A-Right>', "<C-O>$", { desc = "Move to the end of the curr
 
 vim.keymap.set('i', '<C-_>', "<C-A-O>gcc", { desc = "Comment", remap = true })
 vim.keymap.set('v', '<C-_>', "gc", { desc = "Comment", remap = true })
+
+vim.keymap.set('v', '<Tab>', ">", { desc = "Indent seletion", noremap = true })
+vim.keymap.set('v', '<S-Tab>', "<", { desc = "Unindent seletion", noremap = true })
 
 vim.keymap.set('i', '\b', '<C-\\><C-O>"_db', { desc = "Delete word", noremap = true })
 vim.keymap.set('i', '<C-Del>', '<C-\\><C-A-O>"_dw', { desc = "Delete word to the right", noremap = true })
