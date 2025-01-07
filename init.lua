@@ -68,7 +68,9 @@ vim.keymap.set('i', '<C-A-O>', "<C-O>", { desc = "Temporarily use normal mode", 
 
 
 vim.keymap.set('i', '<C-S-Up>', "<cmd>m -2<CR>", { desc = "Move line up", noremap = true })
-vim.keymap.set('i', '<C-S-down>', "<cmd>m +1<CR>", { desc = "Move line down", noremap = true })
+-- vim.keymap.set('s', '<C-S-Up>', "<C-G>dkP`[V`]", { desc = "Move line up", noremap = true })
+vim.keymap.set('i', '<C-S-Down>', "<cmd>m +1<CR>", { desc = "Move line down", noremap = true })
+-- vim.keymap.set('s', '<C-S-Down>', "<C-G>dp`[V`]", { desc = "Move line up", noremap = true })
 vim.keymap.set('i', '<A-Up>', "<cmd>m -2<CR>", { desc = "Move line up", noremap = true })
 vim.keymap.set('i', '<A-Down>', "<cmd>m +1<CR>", { desc = "Move line down", noremap = true })
 vim.keymap.set('i', '<A-Left>', "<C-O>0", { desc = "Move to the beginning of the current line", noremap = true })
@@ -106,6 +108,9 @@ vim.keymap.set({'i', 'v', 's'}, '<C-y>', "<cmd>redo<CR>", { desc = "Redo", norem
 vim.opt.keymodel = 'startsel,stopsel'
 vim.opt.selectmode = 'mouse,key'
 vim.opt.showmode = true
+
+vim.cmd("xnoremap <C-S-Up> dkP`[V`]")
+vim.cmd("xnoremap <C-S-Down> dp`[V`]")
 
 vim.keymap.set('i', '<C-d>', "<cmd>co.<CR>", { desc = "Duplicate line up", noremap = true })
 -- vim.keymap.set('s', '<C-d>', "<C-G>:y<CR>'>gP']", { desc = "Duplicate lines up", noremap = true })
