@@ -107,6 +107,7 @@ vim.opt.keymodel = 'startsel,stopsel'
 vim.opt.selectmode = 'mouse,key'
 vim.opt.showmode = true
 
-
-vim.keymap.set('i', '<C-d>', "<cmd>co.<CR>", { desc = "Duplicate line down", noremap = true })
+vim.keymap.set('i', '<C-d>', "<cmd>co.<CR>", { desc = "Duplicate line up", noremap = true })
+-- vim.keymap.set('s', '<C-d>', "<C-G>:y<CR>'>gP']", { desc = "Duplicate lines up", noremap = true })
+vim.keymap.set('s', '<C-d>', "<C-G>XgPgPi", { desc = "Duplicate lines up", noremap = true })
 
