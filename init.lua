@@ -19,6 +19,9 @@ vim.opt.relativenumber = false
 -- don't wrap lines
 vim.opt.wrap = false
 
+-- case-insensitive search
+vim.opt.ignorecase = true
+
 -- sync with system clipboard
 vim.opt.clipboard = "unnamedplus"
 
