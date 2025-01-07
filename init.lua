@@ -49,7 +49,8 @@ vim.keymap.set({'i', 'n'}, '<Esc>', '<cmd>nohlsearch<CR>', { noremap = true })
 vim.cmd("startinsert")
 
 vim.keymap.set('i', '<C-s>', "<cmd>w<CR>", { desc = "Save file", noremap = true })
-vim.keymap.set('i', '<C-k>', "<cmd>.,.d_<CR>", { desc = "Remove line", noremap = true })
+vim.keymap.set('i', '<C-k>', '<C-O>"_dd', { desc = "Remove line", noremap = true })
+vim.keymap.set('s', '<C-k>', '<C-G>"_dd', { desc = "Remove line", noremap = true })
 vim.keymap.set('i', '<C-x>', "<C-O>dd", { desc = "Cut line", noremap = true })
 vim.keymap.set('v', '<C-x>', "x", { desc = "Cut", noremap = true })
 vim.keymap.set('v', '<C-c>', "y", { desc = "Copy", noremap = true })
@@ -72,10 +73,12 @@ vim.keymap.set('i', '<A-Right>', "<C-O>$", { desc = "Move to the end of the curr
 
 
 vim.keymap.set('i', '<C-_>', "<C-A-O>gcc", { desc = "Comment", remap = true })
-vim.keymap.set('v', '<C-_>', "gc", { desc = "Comment", remap = true })
+vim.keymap.set('s', '<C-_>', "<C-G>gc", { desc = "Comment selection", remap = true })
+vim.keymap.set('v', '<C-_>', "gc", { desc = "Comment selection", remap = true })
 
-vim.keymap.set('v', '<Tab>', ">", { desc = "Indent seletion", noremap = true })
-vim.keymap.set('v', '<S-Tab>', "<", { desc = "Unindent seletion", noremap = true })
+
+vim.keymap.set('v', '<Tab>', "<C-O>>", { desc = "Indent seletion", noremap = true })
+vim.keymap.set({'v', 'i'}, '<S-Tab>', "<C-O><", { desc = "Unindent seletion", noremap = true })
 
 vim.keymap.set('i', '\b', '<C-\\><C-O>"_db', { desc = "Delete word", noremap = true })
 vim.keymap.set('i', '<C-Del>', '<C-\\><C-A-O>"_dw', { desc = "Delete word to the right", noremap = true })
@@ -98,6 +101,8 @@ vim.cmd("inoremap <C-Z> <C-O>u")
 vim.cmd("inoremap <C-Y> <C-O><C-R>")
 
 vim.opt.keymodel = 'startsel,stopsel'
+vim.opt.selectmode = 'mouse,key'
+vim.opt.showmode = true
 
 
 vim.keymap.set('i', '<C-d>', "<cmd>co.<CR>", { desc = "Duplicate line down", noremap = true })
