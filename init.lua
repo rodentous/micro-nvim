@@ -96,9 +96,9 @@ vim.keymap.set('i', '<A-,>', "<cmd>tabprevious<CR>", { desc = "Previous tab", no
 vim.keymap.set('i', '<C-b>', "<cmd>tab terminal<CR>", { desc = "Terminal", noremap = true })
 vim.keymap.set('i', '<C-e>', "<C-O>:", { desc = "Internal command prompt", noremap = true })
 
-
-vim.cmd("inoremap <C-Z> <C-O>u")
-vim.cmd("inoremap <C-Y> <C-O><C-R>")
+vim.keymap.set({'i', 'v', 's'}, '<C-z>', "<cmd>undo<CR>", { desc = "Undo", noremap = true })
+vim.keymap.set({'i', 'v', 's'}, '<C-S-z>', "<cmd>redo<CR>", { desc = "Redo", noremap = true })
+vim.keymap.set({'i', 'v', 's'}, '<C-y>', "<cmd>redo<CR>", { desc = "Redo", noremap = true })
 
 vim.opt.keymodel = 'startsel,stopsel'
 vim.opt.selectmode = 'mouse,key'
